@@ -2,13 +2,15 @@ from app import create_app,db
 from flask_script import Manager,Server
 from app.models import User,Role
 from  flask_migrate import Migrate, MigrateCommand
+from app.models import User,Role,Review
 
 # SQLALCHEMY_TRACK_MODIFICATIONS = False
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
 #creating app instance
-app =create_app("development")
+app = create_app('test')
+# app =create_app("development")
 
 manager= Manager(app)
 manager.add_command('server', Server)

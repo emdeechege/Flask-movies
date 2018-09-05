@@ -29,38 +29,15 @@ class ProdConfig(Config):
     pass
 
 
+class TestConfig(Config):
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://emdee:Mastime87#@localhost/watchlist_test'
+
 class DevConfig(Config):
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://emdee:Mastime87#@localhost/watchlist'
     DEBUG = True
 
 config_options = {
 'development':DevConfig,
-'production':ProdConfig
+'production':ProdConfig,
+'test':TestConfig
 }
-
-
-# class Config:
-#     '''
-#     General configuration parent class
-#     '''
-#     MOVIE_API_BASE_URL ='https://api.themoviedb.org/3/movie/{}?api_key={}'
-#
-#
-#
-# class ProdConfig(Config):
-#     '''
-#     Production  configuration child class
-#
-#     Args:
-#         Config: The parent configuration class with General configuration settings
-#     '''
-#     pass
-#
-#
-# class DevConfig(Config):
-#     '''
-#     Development  configuration child class
-#
-#     Args:
-#         Config: The parent configuration class with General configuration settings
-#     '''
-#
